@@ -3,9 +3,11 @@ package com.busanit.grp.service;
 import com.busanit.grp.entity.Employee;
 import com.busanit.grp.repository.EmpRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class EmpServiceImpl implements EmpService{
     // 이 interface를 사용하려면 EmpService에 있는 메소드?들을 쓰든 안쓰든 일단 다 가져와야함
     // implements EmpService를 썼을때 무조건 빨간줄 뜨고,

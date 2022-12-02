@@ -1,5 +1,6 @@
 package com.busanit.grp.controller;
 
+
 import com.busanit.grp.entity.Employee;
 import com.busanit.grp.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 @Controller // 주소, html을 화면에 표시하거나 html로 데이터를 전달 (json 처리 같은 것이 불가능)
 // @RestController : 텍스트, json, ajax, axios, fetch 와 같은 객체 타입을 전달/전송 할 때 사용
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/grp")  //아래의 주소들은 모두 /grp 로 시작하도록
 public class EmpController {
     @Autowired
-    EmpService empService; // controller 에서 EmpService 내용을 쓸 수 있음
+    EmpService empService;
 
     //addEmp : 화면에 출력(get)
     //@Mapping : GetMapping, PostMapping
