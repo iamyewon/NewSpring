@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Employee Add</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <div class="container">
+        <a href="/grp">List Employees</a>
         <h1>Employee Add</h1>
-        <form method="post" action="/grp/addEmp">
-            <input type="text" required name="username" /><br/>
-            <input type="text" required name="email" /><br/>
-            <input type="text" required name="passwd" /><br/>
+        <form method="post" action="/grp/addEmp" class="form">
+            name<input type="text" required name="username" /><br/>
+            email<input type="text" required name="email" /><br/>
+            passwd<input type="text" required name="passwd" /><br/>
             <input type="submit" value="Add Employee"/>
         </form>
     </div>
