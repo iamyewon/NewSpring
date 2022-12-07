@@ -3,11 +3,12 @@ package com.busanit.grp.service;
 import com.busanit.grp.entity.Employee;
 import com.busanit.grp.repository.EmpRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@Service // 아래 메소드들을 감싼 것은 Service 이고,
 public class EmpServiceImpl implements EmpService{
     // 이 interface를 사용하려면 EmpService에 있는 메소드?들을 쓰든 안쓰든 일단 다 가져와야함
     // implements EmpService를 썼을때 무조건 빨간줄 뜨고,
@@ -26,7 +27,9 @@ public class EmpServiceImpl implements EmpService{
 
     @Override
     public List<Employee> getAllEmployees() { //findAll();
-        return empRepository.findAll();
+        // ==> select * from emp order by id DESC;
+        return empRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
+        // Sort.by 메소드 안에 Sort.Direction 메소드
         // getAllEmployees() 에 파라미터가 없으니 밑에 findAll()에도 파라미터 없음
     }
 
@@ -48,6 +51,7 @@ public class EmpServiceImpl implements EmpService{
             if(emp == null){ // 객체니까 null
                 throw new Exception("User Not Found");
             }else{
+                // delete from emp where id = 10;
                 empRepository.deleteById(id);
             }
         }catch (Exception e){

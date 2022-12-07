@@ -4,7 +4,7 @@ package com.busanit.grp.service;
 import com.busanit.grp.entity.Employee;
 
 import java.util.List;
-
+// 여기는 인터페이스 부분 -> 이렇게 써~ 이름을 정해놓는 정도
 // 여러명이서 이름과 메소드 접근제한자, 타입을 정해진 대로 사용하기 위해서 interface로 작성
 // interface는 { } 없음
 public interface EmpService {

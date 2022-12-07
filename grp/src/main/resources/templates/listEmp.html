@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Employee List</title>
@@ -20,12 +20,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>Edit / Delete</td>
+<!--            th:(thymeleaf로) each(반복문)-->
+<!--            <tr th:each="별명:${Controller 변수값}">   -->
+<!--            빨간줄 떠서 xmlns:th="http://www.thymeleaf.org" 위에 써줬음..-->
+                <tr th:each="emp:${empList}">
+                    <td th:text="${emp.id}"></td>
+                    <td th:text="${emp.username}"></td>
+                    <td th:text="${emp.email}"></td>
+                    <td th:text="${emp.passwd}"></td>
+                    <td>Edit /<a th:href="@{/grp/deleteEmp(id=${emp.id})}">Delete</a></td>
                 </tr>
             </tbody>
         </table>
